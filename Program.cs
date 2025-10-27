@@ -10,7 +10,8 @@ namespace practice4_3sem
         static void Main()
         {
             //NotGenCollection.ArList();
-            GenCollection.Collections();
+            //GenCollection.Collections();
+            ElecScooter.Point2ForElecScooter();
         }
     }
 }

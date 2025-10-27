@@ -30,7 +30,7 @@
             };
 
             Console.WriteLine("\nПервая коллекция: ");
-            foreach (var keys in dictionary) Console.WriteLine($"{keys.Key} {keys.Value}");
+            foreach (var keys in dictionary) Console.WriteLine($"{keys.Key} {keys.Value.Seat}");
             Console.WriteLine();
 
             int n = 2;
@@ -45,7 +45,7 @@
 
 
             Console.WriteLine("\nПервая коллекция после удаления: ");
-            foreach (var keys in dictionary) Console.WriteLine($"{keys.Key} {keys.Value}");
+            foreach (var keys in dictionary) Console.WriteLine($"{keys.Key} {keys.Value.Seat}");
             Console.WriteLine();
 
             Stack<ElecScooter> stack = [];
@@ -57,17 +57,17 @@
             }
             foreach (var s in stack)
             {
-                Console.WriteLine(s);
+                Console.WriteLine(s.Seat);
             }
 
-            var ToFind = new ElecScooter();
+            var ToFind = new ElecScooter(false);
 
             n = 0;
             if (stack.Contains(ToFind))
             {
                 foreach (var key in stack)
                 {
-                    if (key.Equals(ToFind)) break;
+                    if (key.Seat == ToFind.Seat) ;
                     n++;
                 }
             }
