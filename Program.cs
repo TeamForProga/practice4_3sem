@@ -9,12 +9,15 @@ namespace practice4_3sem
     {
         static void Main()
         {
-            //NotGenCollection.ArList();
-            //GenCollection.Collections();
-            // ElecScooter.Point2ForElecScooter();
+
+            Console.WriteLine("===== Работа с необобщённой коллекцией ArrayList (пункт 1) =====");
+            NotGenCollection.ArList();
+
+            Console.WriteLine("\n===== Работа с обобщённой коллекцией Dictionary<string, string> и Stack<string> (пункт 2) =====");
+            GenCollection.Collections();
 
 
-            Console.WriteLine("===== Работа с пользовательским классом ElecScooter =====");
+            Console.WriteLine("===== Работа с пользовательским классом ElecScooter (пункт 3) =====");
 
 
             // Создаём несколько объектов вручную
@@ -41,9 +44,8 @@ namespace practice4_3sem
             ElecScooter.Point2ForElecScooter();
 
 
-
-
             // === пункт 4 ===
+            Console.WriteLine("\n===== Демонстрация ObservableCollection (пункт 4) =====");
             ObservableDemo.DemoObservable();
 
             Console.WriteLine("\nНажмите любую клавишу для выхода...");
