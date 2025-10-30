@@ -8,7 +8,6 @@ namespace practice4_3sem
     {
         public static void DemoObservable()
         {
-            Console.WriteLine("\n===== Пункт 4. ObservableCollection =====\n");
 
             // Создаём наблюдаемую коллекцию объектов ElecScooter
             ObservableCollection<ElecScooter> scooters = new();

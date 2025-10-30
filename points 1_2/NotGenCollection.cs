@@ -7,7 +7,7 @@ namespace practice4_3sem
         public static void ArList()
         {
             // Создание коллекции ArrayList
-            ArrayList list = [];
+            ArrayList list = new ArrayList();
             // Заполнение ее 5-ю случайными целыми числами
             for (int i = 0; i < 5; i++)
             {
@@ -16,9 +16,13 @@ namespace practice4_3sem
             }
             list.Add("AS");     // Добавление строки
 
+            Console.WriteLine("Список: ");
+            foreach (var i in list) { Console.Write("{0} ", i); }
+            Console.WriteLine();
+
             Console.Write("Введите элемент для удаления: ");
-            string con = Console.ReadLine();
-            list.Remove(con);       // Удаление элемента
+            int delNum = Convert.ToInt32(Console.ReadLine());
+            list.Remove(delNum);       // Удаление элемента
 
             Console.WriteLine("Список: ");
             foreach (var i in list) { Console.Write("{0} ", i); }
