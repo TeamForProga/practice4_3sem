@@ -11,7 +11,43 @@ namespace practice4_3sem
         {
             //NotGenCollection.ArList();
             //GenCollection.Collections();
+            // ElecScooter.Point2ForElecScooter();
+
+
+            Console.WriteLine("===== Работа с пользовательским классом ElecScooter =====");
+
+
+            // Создаём несколько объектов вручную
+            ElecScooter scooter1 = new ElecScooter(true);
+            ElecScooter scooter2 = new ElecScooter(false);
+
+            Console.WriteLine("\nДемонстрация метода Print():");
+            scooter1.Print();
+            scooter2.Print();
+
+            Console.WriteLine("\nСравнение объектов (CompareTo):");
+            int result = scooter1.CompareTo(scooter2);
+            if (result > 0) Console.WriteLine("Первый электросамокат 'больше' (имеет сиденье)");
+            else if (result < 0) Console.WriteLine("Второй электросамокат 'больше' (не имеет сиденья)");
+            else Console.WriteLine("Оба электросамоката равны");
+
+            Console.WriteLine("\nКлонирование объекта:");
+            var clone = (ElecScooter)scooter1.Clone();
+            clone.Print();
+            Console.WriteLine($"Клон равен оригиналу? {clone.Equals(scooter1)}");
+
+            // Вызов основной демонстрации из пункта 3
+            Console.WriteLine("\n===== Демонстрация работы коллекций (пункт 3) =====");
             ElecScooter.Point2ForElecScooter();
+
+
+
+
+            // === пункт 4 ===
+            ObservableDemo.DemoObservable();
+
+            Console.WriteLine("\nНажмите любую клавишу для выхода...");
+            Console.ReadKey();
         }
     }
 }

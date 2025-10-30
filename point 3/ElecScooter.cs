@@ -1,6 +1,6 @@
 ﻿namespace practice4_3sem
 {
-    public class ElecScooter
+    public class ElecScooter : IComparable<ElecScooter>, IComparer<ElecScooter>, ICloneable
     {
         private bool _Seat;
         public bool Seat  // Есть ли сиденье (True = есть, False = нет)
@@ -19,6 +19,37 @@
         {
             Console.WriteLine($"Имеется ли сиденье: {(Seat == true ? "Да" : "Нет")}");
         }
+
+        // Реализация интерфейсов 
+        public int CompareTo(ElecScooter? other)
+        {
+            if (other == null) return 1; // если второй объект отсутствует — текущий больше
+            if (this.Seat == other.Seat) return 0;
+            return this.Seat ? 1 : -1; // true > false
+        }
+
+
+        public int Compare(ElecScooter? x, ElecScooter? y)
+        {
+            if (x == null || y == null) return 0;
+            if (x.Seat == y.Seat) return 0;
+            return x.Seat ? 1 : -1;
+        }
+
+        public object Clone()
+        {
+            return new ElecScooter(this.Seat);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is ElecScooter scooter)
+                return this.Seat == scooter.Seat; // сравниваем по значению Seat
+            return false;
+        }
+
+        public override int GetHashCode() => Seat.GetHashCode();
+
 
         public static void Point2ForElecScooter()
         {
@@ -67,11 +98,15 @@
             {
                 foreach (var key in stack)
                 {
-                    if (key.Seat == ToFind.Seat) ;
-                    n++;
+                    if (key.Seat == ToFind.Seat)
+                        n++;
                 }
+                Console.WriteLine($"\nНайдено совпадений: {n}");
             }
-            Console.WriteLine($"\nИндекс искомого: {n}");
+            else
+            {
+                Console.WriteLine("\nЭлемент не найден в стеке.");
+            }
 
         }
     }
